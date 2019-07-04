@@ -9,8 +9,12 @@ messageService;
   constructor(messageService :MessageService) {
 this.messageService=messageService
    }
-getHeroes(): Observable<Hero[]> {
-  this.messageService.add('HeroService: fetched heroes');
+   getHeroes(): Observable<Hero[]> {
+  this.messageService.add('HeroService: fetched heroes id=${id}');
   return of(HEROES);
+}
+getHeroe(id :number): Observable<Hero> {
+  this.messageService.add('HeroService: fetched heroes id=${id}');
+  return of(HEROES.find(hero=>hero.id==id));
 }
 }

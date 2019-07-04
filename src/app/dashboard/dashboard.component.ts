@@ -13,6 +13,7 @@ heroService;
   }
 
   ngOnInit() {
+    this.getHeroes();
   }
 getHeroes(): void {
   this.heroService.getHeroes()
